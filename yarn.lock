@@ -15376,6 +15376,9 @@ react-native-fs@^2.16.6:
     base-64 "^0.1.0"
     utf8 "^3.0.0"
 
+"react-native-galoy-merchant@file:../galoy-plugin-merchant/src/react-native-galoy-merchant/src":
+  version "0.0.0"
+
 react-native-gesture-handler@^1.9.0:
   version "1.10.3"
   resolved "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
@@ -16267,6 +16270,13 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rn-swipeable-panel@^1.2.5, rn-swipeable-panel@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/rn-swipeable-panel/-/rn-swipeable-panel-1.2.7.tgz#a72f65c91d51715e84cdb9e912db8d94c150b1be"
+  integrity sha512-ibaU2+4J/VliCud8neQLzuLLNv3DP3t3+ySeG6Nn4mibhLQp/lvU47lCzvPiz4WhO6FTzre2k7Q5LqsuH5ThXQ==
+  dependencies:
+    rn-swipeable-panel "^1.2.5"
 
 roarr@^2.15.3:
   version "2.15.4"

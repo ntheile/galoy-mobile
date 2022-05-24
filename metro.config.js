@@ -31,6 +31,7 @@ module.exports = (async () => {
         stream: path.resolve(__dirname, "node_modules/readable-stream"),
         zlib: path.resolve(__dirname, "node_modules/browserify-zlib"),
         types: path.resolve(__dirname, "../common/types"),
+        "react-native-galoy-merchant": path.resolve(__dirname, "../galoy-plugin-merchant/src/react-native-galoy-merchant/src")
       },
     },
     maxWorkers: 2,

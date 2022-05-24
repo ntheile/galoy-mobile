@@ -23,7 +23,8 @@
     "patch": "patch-package",
     "postinstall": "jetify && if which pod >/dev/null; then (cd ios; pod install); fi",
     "hack:types-react-native": "rimraf node_modules/@types/react-native/node_modules/@types",
-    "prepare": "npm-run-all patch hack:*"
+    "prepare": "npm-run-all patch hack:*",
+    "reset-cache": "react-native start --reset-cache"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -83,6 +84,7 @@
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-fingerprint-scanner": "^6.0.0",
     "react-native-fs": "^2.16.6",
+    "react-native-galoy-merchant": "file:../galoy-plugin-merchant/src/react-native-galoy-merchant/src",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-haptic-feedback": "^1.13.0",
     "react-native-icloudstore": "^0.9.0",
@@ -112,6 +114,7 @@
     "react-native-version-number": "^0.3.6",
     "react-native-walkthrough-tooltip": "^1.2.0",
     "react-native-youtube": "^2.0.0",
+    "rn-swipeable-panel": "^1.2.7",
     "subscriptions-transport-ws": "^0.11.0",
     "url": "^0.11.0",
     "victory-native": "^36.2.0"

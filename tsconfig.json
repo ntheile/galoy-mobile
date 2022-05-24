@@ -21,9 +21,10 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@app/*": ["app/*"]
+      "@app/*": ["app/*"],
+      "react-native-galoy-merchant/*": ["../galoy-plugin-merchant/src/react-native-galoy-merchant/src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["app", "test", "storybook", "utils/declaration.d.ts"]
+  "include": ["app", "test", "storybook", "utils/declaration.d.ts", "../galoy-plugin-merchant/src"]
 }
