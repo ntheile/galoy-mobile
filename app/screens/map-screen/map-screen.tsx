@@ -15,6 +15,7 @@ import { translateUnknown as translate } from "@galoymoney/client"
 import { palette } from "../../theme/palette"
 import { toastShow } from "../../utils/toast"
 import useToken from "../../utils/use-token"
+import { Merchants } from 'react-native-galoy-merchant';
 
 const QUERY_BUSINESSES = gql`
   query businessMapMarkers {
@@ -150,7 +151,8 @@ export const MapScreen: ScreenType = ({ navigation }: Props) => {
 
   return (
     <Screen>
-      <MapView
+      <Merchants />
+      {/* <MapView
         style={styles.map}
         showsUserLocation={true}
         initialRegion={{
@@ -161,7 +163,7 @@ export const MapScreen: ScreenType = ({ navigation }: Props) => {
         }}
       >
         {markers}
-      </MapView>
+      </MapView> */}
     </Screen>
   )
 }

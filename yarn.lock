@@ -15376,6 +15376,9 @@ react-native-fs@^2.16.6:
     base-64 "^0.1.0"
     utf8 "^3.0.0"
 
+"react-native-galoy-merchant@file:../galoy-plugin-merchant/src/frontend/react-native-galoy-merchant/src":
+  version "0.0.0"
+
 react-native-gesture-handler@^1.9.0:
   version "1.10.3"
   resolved "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
