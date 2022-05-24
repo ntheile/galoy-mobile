@@ -22,7 +22,7 @@
     "baseUrl": "./",
     "paths": {
       "@app/*": ["app/*"],
-      "react-native-galoy-merchant/*": ["../galoy-plugin-merchant/src/frontend/react-native-galoy-merchant/src/*"]
+      "react-native-galoy-merchant/*": ["../galoy-plugin-merchant/src/react-native-galoy-merchant/src/*"]
     }
   },
   "exclude": ["node_modules"],

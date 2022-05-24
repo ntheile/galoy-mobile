@@ -84,7 +84,7 @@
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-fingerprint-scanner": "^6.0.0",
     "react-native-fs": "^2.16.6",
-    "react-native-galoy-merchant": "file:../galoy-plugin-merchant/src/frontend/react-native-galoy-merchant/src",
+    "react-native-galoy-merchant": "file:../galoy-plugin-merchant/src/react-native-galoy-merchant/src",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-haptic-feedback": "^1.13.0",
     "react-native-icloudstore": "^0.9.0",
