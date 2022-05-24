@@ -114,6 +114,7 @@
     "react-native-version-number": "^0.3.6",
     "react-native-walkthrough-tooltip": "^1.2.0",
     "react-native-youtube": "^2.0.0",
+    "rn-swipeable-panel": "^1.2.7",
     "subscriptions-transport-ws": "^0.11.0",
     "url": "^0.11.0",
     "victory-native": "^36.2.0"
