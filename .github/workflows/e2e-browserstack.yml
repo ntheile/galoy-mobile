@@ -1,0 +1,20 @@
+name: "E2E Browserstack"
+on:
+  workflow_dispatch:
+    inputs:
+      app_version:
+        description: "Enter the version of the mobile app you want to test from https://github.com/GaloyMoney/galoy-mobile/tags. For example, 2.0.58"
+        required: true
+jobs:
+  e2e-browserstack:
+    name: E2E Browserstack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: 'https://github.com/GaloyMoney/galoy-mobile'
+          ref: github.event.inputs.app_version
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - name: Run check code
+        run: yarn check-code
