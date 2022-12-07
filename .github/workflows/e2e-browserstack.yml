@@ -10,6 +10,8 @@ env:
   BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
   BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
   BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
+  GALOY_TOKEN: ${{ secrets.GALOY_TOKEN }}
+  GALOY_TOKEN_2: ${{ secrets.GALOY_TOKEN_2 }}
 jobs:
   e2e-browserstack:
     name: E2E Browserstack
