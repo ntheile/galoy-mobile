@@ -7,6 +7,9 @@ on:
         required: true
 env:
   APP_VERSION: ${{ github.event.inputs.app_version }}
+  BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+  BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+  BROWSERSTACK_APP_ID: ${{ secrets.BROWSERSTACK_APP_ID }}
 jobs:
   e2e-browserstack:
     name: E2E Browserstack
@@ -21,3 +24,6 @@ jobs:
       - run: yarn install
       - name: Run check code
         run: yarn check-code
+      # TODO hit browserstack api to get app_id i.e bs:// based on version i.e 2.0.58
+      - name: Run E2E TEST
+        run: BROWSERSTACK_BUILD=\"Android Manual Test\" BROWSERSTACK_BUILD_VERSION=\"$APP_VERSION\" BROWSERSTACK_APP_ID=\"$BROWSERSTACK_APP_ID\" E2E_DEVICE=\"android\" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
