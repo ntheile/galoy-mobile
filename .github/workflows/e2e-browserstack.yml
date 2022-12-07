@@ -26,4 +26,4 @@ jobs:
         run: yarn check-code
       # TODO hit browserstack api to get app_id i.e bs:// based on version i.e 2.0.58
       - name: Run E2E TEST
-        run: BROWSERSTACK_BUILD=\"Android Manual Test\" BROWSERSTACK_BUILD_VERSION=\"$APP_VERSION\" BROWSERSTACK_APP_ID=\"$BROWSERSTACK_APP_ID\" E2E_DEVICE=\"android\" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
+        run: BROWSERSTACK_BUILD="Android Manual Test" BROWSERSTACK_BUILD_VERSION="$APP_VERSION" BROWSERSTACK_APP_ID="$BROWSERSTACK_APP_ID" E2E_DEVICE="android" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
