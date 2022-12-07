@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'https://github.com/GaloyMoney/galoy-mobile'
+          repository: 'https://github.com/GaloyMoney/galoy-mobile.git'
           ref: github.event.inputs.app_version
       - uses: actions/setup-node@v2
       - run: yarn install
