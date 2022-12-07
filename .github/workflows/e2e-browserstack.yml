@@ -16,6 +16,7 @@ jobs:
         with:
           repository: 'GaloyMoney/galoy-mobile'
       - uses: actions/setup-node@v2
+      - run: git fetch --all --tags
       - run: git checkout $APP_VERSION
       - run: yarn install
       - name: Run check code
