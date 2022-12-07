@@ -29,7 +29,7 @@ jobs:
         run: |-
           BROWSERSTACK_APP_ID=$(curl -u "$BROWSERSTACK_USER:$BROWSERSTACK_ACCESS_KEY" \
             -X GET "https://api-cloud.browserstack.com/app-automate/recent_group_apps" |  \
-            jq 'first( .[] | select( .app_version == "$APP_VERSION" )) | .app_url') &&
+            APP_VERSION=$APP_VERSION jq 'first( .[] | select( .app_version == env.APP_VERSION )) | .app_url') &&
           echo "BROWSERSTACK_APP_ID=$BROWSERSTACK_APP_ID" >> $GITHUB_ENV &&
           echo $BROWSERSTACK_APP_ID
       - name: Run E2E test on Browserstack
