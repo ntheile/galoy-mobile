@@ -52,6 +52,8 @@ jobs:
           echo "IOS_BROWSERSTACK_APP_ID=$IOS_BROWSERSTACK_APP_ID" >> $GITHUB_ENV;
           echo $IOS_BROWSERSTACK_APP_ID;
       - name: Run IOS E2E test on Browserstack
+        continue-on-error: true
         run: BROWSERSTACK_BUILD="IOS Manual Test" BROWSERSTACK_BUILD_VERSION="${{env.APP_VERSION}}" BROWSERSTACK_APP_ID=${{env.IOS_BROWSERSTACK_APP_ID}} E2E_DEVICE="ios" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
       - name: Run Android E2E test on Browserstack
+        continue-on-error: true
         run: BROWSERSTACK_BUILD="Android Manual Test" BROWSERSTACK_BUILD_VERSION="${{env.APP_VERSION}}" BROWSERSTACK_APP_ID=${{env.ANDROID_BROWSERSTACK_APP_ID}} E2E_DEVICE="android" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
