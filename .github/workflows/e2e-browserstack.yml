@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       app_version:
-        description: "Enter the version of the mobile app you want to test from https://github.com/GaloyMoney/galoy-mobile/tags. For example, 2.0.58"
+        description: "Enter the version of the mobile app you want to test from https://github.com/GaloyMoney/galoy-mobile/tags. For example, 2.0.59"
         required: true
 env:
   APP_VERSION: ${{ github.event.inputs.app_version }}
@@ -27,10 +27,20 @@ jobs:
         run: yarn check-code
       - name: Get the ANDROID_BROWSERSTACK_APP_ID
         run: |-
-          ANDROID_BROWSERSTACK_APP_ID=$(curl -u "$BROWSERSTACK_USER:$BROWSERSTACK_ACCESS_KEY" \
-            -X GET "https://api-cloud.browserstack.com/app-automate/recent_group_apps" |  \
-            APP_VERSION=$APP_VERSION jq 'first( .[] | select(.app_version == env.APP_VERSION) | select(.app_name | contains("apk")) ) | .app_url') &&
-          echo "ANDROID_BROWSERSTACK_APP_ID=$ANDROID_BROWSERSTACK_APP_ID" >> $GITHUB_ENV &&
-          echo $ANDROID_BROWSERSTACK_APP_ID
+          ANDROID_BROWSERSTACK_APP_ID=$(
+            curl \
+              -u "$BROWSERSTACK_USER:$BROWSERSTACK_ACCESS_KEY" \
+              -X GET "https://api-cloud.browserstack.com/app-automate/recent_group_apps" | \
+              APP_VERSION=$APP_VERSION
+              jq '
+                first(
+                  .[]
+                  | select(.app_version == env.APP_VERSION)
+                  | select(.app_name | contains("apk"))
+                ) | .app_url
+              '
+          );
+          echo "ANDROID_BROWSERSTACK_APP_ID=$ANDROID_BROWSERSTACK_APP_ID" >> $GITHUB_ENV;
+          echo $ANDROID_BROWSERSTACK_APP_ID;
       - name: Run Android E2E test on Browserstack
-        run: BROWSERSTACK_BUILD="Android Manual Test" BROWSERSTACK_BUILD_VERSION="$APP_VERSION" BROWSERSTACK_APP_ID=${{env.ANDROID_BROWSERSTACK_APP_ID}} E2E_DEVICE="android" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
+        run: BROWSERSTACK_BUILD="Android Manual Test" BROWSERSTACK_BUILD_VERSION=${{env.APP_VERSION}} BROWSERSTACK_APP_ID=${{env.ANDROID_BROWSERSTACK_APP_ID}} E2E_DEVICE="android" ./node_modules/.bin/wdio e2e/config/browserstack.conf.js
