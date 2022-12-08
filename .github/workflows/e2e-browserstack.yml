@@ -20,8 +20,8 @@ jobs:
         with:
           repository: 'GaloyMoney/galoy-mobile'
       - uses: actions/setup-node@v2
-      - run: git fetch --all --tags
-      - run: git checkout $APP_VERSION
+      # - run: git fetch --all --tags
+      # - run: git checkout $APP_VERSION
       - run: yarn install
       - name: Get the ANDROID_BROWSERSTACK_APP_ID
         run: |-
